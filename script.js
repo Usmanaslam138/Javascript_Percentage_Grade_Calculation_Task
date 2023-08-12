@@ -1,12 +1,45 @@
-let marksC = prompt("Enter the marks of chemistry ")
-let marksP = prompt("Enter the marks of physics ")
-let marksM = prompt("Enter the marks of maths")
-let marksE = prompt("Enter the marks of english ")
-let marksB = prompt("Enter the marks of biology ")
+let heading1 = document.getElementById('heading1')
+let paragraph1 = document.getElementById('paragraph1')
+let paragraph2 = document.getElementById('paragraph2')
 
+let marksC = parseInt(prompt("Enter the marks of chemistry "))
+let marksP = parseInt(prompt("Enter the marks of physics "))
+let marksM = parseInt(prompt("Enter the marks of maths"))
+let marksE = parseInt(prompt("Enter the marks of english "))
+let marksB = parseInt(prompt("Enter the marks of biology "))
 
-let totalMarks = 500
-let obtainedMarks = marksC + marksB + marksE + marksM + marksP
+if (marksC == NaN) {
+    alert("You must have to enter all subjects marks")
+}
+else if (marksC > 100 || marksP > 100 || marksM > 100 || marksE > 100 || marksB > 100) {
+    alert("Marks should be less than or equal to 100 ")
+}
+else {
 
-let percentage = (obtainedMarks / totalMarks) * 100
-console.log(percentage)
+    let totalMarks = 500
+    let obtainedMarks = marksC + marksB + marksE + marksM + marksP
+
+    let percentage = Math.floor((obtainedMarks / totalMarks) * 100)
+    if (obtainedMarks >= 90) {
+        var Grade = "A+"
+    }
+    else if (obtainedMarks >= 80 && obtainedMarks < 90) {
+        Grade = "A"
+    }
+    else if (obtainedMarks >= 70 && obtainedMarks < 80) {
+        Grade = "B+"
+    }
+    else if (obtainedMarks >= 60 && obtainedMarks < 70) {
+        Grade = "B"
+    }
+    else if (obtainedMarks >= 50 && obtainedMarks < 60) {
+        Grade = "C"
+    }
+    else {
+        Grade = "F"
+    }
+    heading1.innerHTML = "Result"
+    paragraph1.innerHTML = `Percentage = ${percentage}`
+    paragraph2.innerHTML = `Grade = ${Grade}`
+}
+
