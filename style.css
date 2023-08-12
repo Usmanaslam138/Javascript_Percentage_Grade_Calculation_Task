@@ -14,3 +14,10 @@
   font-size: 25px;
   color: rgb(149, 0, 255);
 }
+#btn {
+  background: #ff6a8d;
+  border: none;
+  padding: 7px 15px 7px 15px;
+  text-align: center;
+  cursor: pointer;
+}

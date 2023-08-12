@@ -1,6 +1,7 @@
 let heading1 = document.getElementById('heading1')
 let paragraph1 = document.getElementById('paragraph1')
 let paragraph2 = document.getElementById('paragraph2')
+let paragraph3 = document.getElementById('paragraph3')
 
 var marksC = parseInt(prompt("Enter the marks of chemistry "))
 var marksP = parseInt(prompt("Enter the marks of physics "))
@@ -46,4 +47,18 @@ else {
     paragraph1.innerHTML = `Percentage = ${percentage}`
     paragraph2.innerHTML = `Grade = ${Grade}`
 
+    function passFail() {
+        let y = confirm("Are you curious to check whether you are pass or fail? ")
+        if (y) {
+            let passing_percentage = parseInt(prompt("Enter your percentage "))
+
+            if (passing_percentage <= 40) {
+                paragraph3.innerHTML = "You are Fail"
+            }
+            else {
+                paragraph3.innerHTML = "You Are Pass"
+            }
+        }
+    }
 }
+
