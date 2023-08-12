@@ -20,19 +20,22 @@ else {
     let obtainedMarks = marksC + marksB + marksE + marksM + marksP
 
     let percentage = Math.floor((obtainedMarks / totalMarks) * 100)
-    if (obtainedMarks >= 90) {
+    if (percentage >= 90) {
         var Grade = "A+"
     }
-    else if (obtainedMarks >= 80 && obtainedMarks < 90) {
+    else if (percentage >= 80 && percentage < 90) {
         Grade = "A"
     }
-    else if (obtainedMarks >= 70 && obtainedMarks < 80) {
+    else if (percentage >= 70 && percentage < 80) {
         Grade = "B+"
     }
-    else if (obtainedMarks >= 60 && obtainedMarks < 70) {
+    else if (percentage >= 60 && percentage < 70) {
         Grade = "B"
     }
-    else if (obtainedMarks >= 50 && obtainedMarks < 60) {
+    else if (percentage >= 50 && percentage < 60) {
+        Grade = "C+"
+    }
+    else if (percentage >= 40 && percentage < 50) {
         Grade = "C"
     }
     else {
